@@ -19,6 +19,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# === Root Route to Confirm API is Live ===
+@app.get("/")
+def read_root():
+    return {"message": "Leaf Disease Detection API is running!"}
+
 # === Auto-download model if not exists ===
 model_path = "CNN_modell.h5"
 drive_url = "https://drive.google.com/uc?id=1tI0hG3s9wWbiP_XJDeFwbRf0Z4pGJ2S7"
